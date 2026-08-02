@@ -1,0 +1,69 @@
+{
+  "appointments": [
+    {
+      "name": "اميره",
+      "phone": "01016235598",
+      "service": "Hollywood Smile",
+      "date": "2026-05-14",
+      "time": "8:30 مساءً",
+      "id": "5n2oU6PFgbw"
+    },
+    {
+      "name": "reema",
+      "phone": "01017526265",
+      "service": "Tooth Extraction",
+      "date": "2026-05-22",
+      "time": "9:00 مساءً",
+      "id": "S24PyhoTvMU"
+    },
+    {
+      "name": "امل",
+      "phone": "01258532145",
+      "service": "Wisdom Tooth Removal",
+      "date": "2026-06-02",
+      "time": "9:00 مساءً",
+      "id": "pO-6toWIqmo"
+    },
+    {
+      "id": "ZzfarTPwkH8",
+      "name": "روناء",
+      "phone": "01015632258",
+      "service": "Dental Implants",
+      "date": "2026-05-30",
+      "time": "2:00 بعد الظهر"
+    },
+    {
+      "id": "02I8WRWu8og",
+      "name": "rahmaa",
+      "phone": "01117608864",
+      "service": "Tooth Extraction",
+      "date": "2026-08-19",
+      "time": "7:00 مساءً"
+    },
+    {
+      "id": "8w_H_L5rWRs",
+      "name": "rahmaaaa",
+      "phone": "01017608864",
+      "service": "Pediatric Dentistry",
+      "date": "2026-08-19",
+      "time": "6:25 مساءً"
+    },
+    {
+      "id": "lXPzfT3y-dw",
+      "name": "rahma alaa",
+      "phone": "01017608864",
+      "service": "Root Canal Treatment",
+      "date": "2026-08-19",
+      "time": "9:00 مساءً"
+    },
+    {
+      "id": "fafddsgrM2g",
+      "name": "رحمه علاء",
+      "phone": "01017608864",
+      "service": "Orthodontics",
+      "date": "2026-08-17",
+      "time": "5:00 مساءً"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard | Prime Smile</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        :root {
+            --navy: #1c3d5a;
+            --gold: #c9a24d;
+            --gold-dark: #b8933f;
+            --bg: #f4f6f9;
+            --white: #ffffff;
+            --text: #212529;
+            --muted: #6c757d;
+            --border: #e0e4ea;
+            --danger: #dc3545;
+            --danger-dark: #c82333;
+            --shadow: 0 4px 20px rgba(28, 61, 90, 0.10);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            transition: direction 0.2s;
+        }
+
+        /* ── HEADER ── */
+        header {
+            background: var(--navy);
+            padding: 16px 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.18);
+        }
+
+        .logo {
+            color: var(--gold);
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        /* ── BUTTONS ── */
+        .btn {
+            background: var(--gold);
+            color: var(--navy);
+            padding: 9px 20px;
+            border-radius: 30px;
+            border: none;
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 600;
+            font-size: 13px;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .btn:hover {
+            background: var(--gold-dark);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(201, 162, 77, 0.3);
+        }
+
+        .btn-danger {
+            background: var(--danger);
+            color: #fff;
+        }
+
+        .btn-danger:hover {
+            background: var(--danger-dark);
+        }
+
+        .btn-edit {
+            background: var(--navy);
+            color: #fff;
+        }
+
+        .btn-edit:hover {
+            background: #14304a;
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--white);
+            border: 1.5px solid rgba(255, 255, 255, 0.4);
+            padding: 8px 18px;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 500;
+            cursor: pointer;
+            font-family: 'DM Sans', sans-serif;
+            transition: all 0.2s;
+        }
+
+        .btn-outline:hover {
+            border-color: var(--gold);
+            color: var(--gold);
+        }
+
+        /* ── MAIN CONTENT ── */
+        main {
+            padding: 36px 32px;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            color: var(--navy);
+            font-size: 28px;
+            margin-bottom: 28px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* ── SEARCH BAR ── */
+        .search-bar {
+            background: var(--white);
+            border-radius: 14px;
+            padding: 20px 24px;
+            box-shadow: var(--shadow);
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+        }
+
+        .search-bar input {
+            flex: 1;
+            min-width: 200px;
+            padding: 10px 16px;
+            border-radius: 8px;
+            border: 1.5px solid var(--border);
+            font-family: 'DM Sans', sans-serif;
+            font-size: 14px;
+            color: var(--text);
+            background: var(--bg);
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .search-bar input:focus {
+            outline: none;
+            border-color: var(--gold);
+            box-shadow: 0 0 0 3px rgba(201, 162, 77, 0.15);
+        }
+
+        /* ── STATS ROW ── */
+        .stats-row {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+        }
+
+        .stat-card {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 18px 24px;
+            flex: 1;
+            min-width: 140px;
+            box-shadow: var(--shadow);
+            border-left: 4px solid var(--gold);
+        }
+
+        [dir="rtl"] .stat-card {
+            border-left: none;
+            border-right: 4px solid var(--gold);
+        }
+
+        .stat-card .stat-num {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            color: var(--navy);
+            font-weight: 700;
+        }
+
+        .stat-card .stat-label {
+            font-size: 12px;
+            color: var(--muted);
+            margin-top: 2px;
+        }
+
+        /* ── TABLE ── */
+        .table-wrapper {
+            background: var(--white);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        thead tr {
+            background: var(--navy);
+        }
+
+        th {
+            color: var(--white);
+            font-size: 13px;
+            font-weight: 600;
+            padding: 14px 16px;
+            text-align: center;
+            letter-spacing: 0.3px;
+        }
+
+        td {
+            padding: 14px 16px;
+            text-align: center;
+            font-size: 14px;
+            border-bottom: 1px solid var(--border);
+            color: var(--text);
+        }
+
+        tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        tbody tr:hover {
+            background: #f8f9fa;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(201, 162, 77, 0.12);
+            color: var(--gold-dark);
+            border-radius: 20px;
+            padding: 3px 12px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        /* ── EMPTY STATE ── */
+        .empty-state {
+            text-align: center;
+            padding: 60px 20px;
+            color: var(--muted);
+            display: none;
+        }
+
+        .empty-state i {
+            font-size: 48px;
+            margin-bottom: 16px;
+            opacity: 0.3;
+            display: block;
+        }
+
+        .empty-state p {
+            font-size: 15px;
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 768px) {
+            main {
+                padding: 24px 16px;
+            }
+
+            header {
+                padding: 14px 16px;
+            }
+
+            th,
+            td {
+                padding: 10px 10px;
+                font-size: 12px;
+            }
+
+            .stats-row {
+                gap: 10px;
+            }
+        }
+
+        @media (max-width: 500px) {
+            table {
+                font-size: 11px;
+            }
+
+            .btn {
+                padding: 7px 12px;
+                font-size: 11px;
+            }
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+    </style>
+</head>
+
+<body dir="ltr">
+
+    <!-- ── HEADER ── -->
+    <header>
+        <div class="logo"><i class="fas fa-tooth"></i> Prime Smile</div>
+        <div class="header-actions">
+            <a href="index.html" class="btn-outline" style="text-decoration:none;" data-en="← Back to Site"
+                data-ar="← العودة للموقع">← Back to Site</a>
+            <button class="btn-outline" onclick="toggleLang()" id="langBtn">عربي</button>
+        </div>
+    </header>
+
+    <!-- ── MAIN ── -->
+    <main>
+        <h1><i class="fas fa-calendar-check" style="color:var(--gold)"></i> <span data-en="Bookings Dashboard"
+                data-ar="لوحة الحجوزات">Bookings Dashboard</span></h1>
+
+        <!-- Stats -->
+        <div class="stats-row">
+            <div class="stat-card">
+                <div class="stat-num" id="statTotal">0</div>
+                <div class="stat-label" data-en="Total Bookings" data-ar="إجمالي الحجوزات">Total Bookings</div>
+            </div>
+      
+        </div>
+
+        <!-- Search Bar -->
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search by name or phone..."
+                data-placeholder-en="Search by name or phone..." data-placeholder-ar="ادخل الاسم أو رقم التليفون للبحث">
+            <button class="btn" onclick="searchBooking()">
+                <i class="fas fa-search"></i>
+                <span data-en="Search" data-ar="بحث">Search</span>
+            </button>
+            <button class="btn btn-edit" onclick="renderTable()">
+                <i class="fas fa-list"></i>
+                <span data-en="Show All" data-ar="عرض الكل">Show All</span>
+            </button>
+        </div>
+
+        <!-- Table -->
+        <div class="table-wrapper">
+            <table id="appointmentsTable">
+                <thead>
+                    <tr>
+                        <th data-en="Name" data-ar="الاسم">Name</th>
+                        <th data-en="Mobile" data-ar="رقم الموبايل">Mobile</th>
+                        <th data-en="Service" data-ar="الخدمة">Service</th>
+                        <th data-en="Date" data-ar="التاريخ">Date</th>
+                        <th data-en="Time" data-ar="الوقت">Time</th>
+                        <th data-en="Edit" data-ar="تعديل">Edit</th>
+                        <th data-en="Delete" data-ar="حذف">Delete</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody"></tbody>
+            </table>
+
+            <div class="empty-state" id="emptyMsg">
+                <i class="fas fa-calendar-times"></i>
+                <p data-en="No bookings found." data-ar="لا يوجد حجوزات حالياً.">No bookings found.</p>
+            </div>
+        </div>
+        
+    </main>
+
+    <script>
+        // ── LANGUAGE SYSTEM ──
+        let currentLang = 'en';
+
+        function toggleLang() {
+            currentLang = currentLang === 'en' ? 'ar' : 'en';
+            applyLang(currentLang);
+        }
+
+        function applyLang(lang) {
+            const isAr = lang === 'ar';
+            document.documentElement.setAttribute('lang', lang);
+            document.body.setAttribute('dir', isAr ? 'rtl' : 'ltr');
+
+            document.querySelectorAll('[data-en]').forEach(el => {
+                el.textContent = el.getAttribute('data-' + lang);
+            });
+            document.querySelectorAll('[data-placeholder-en]').forEach(el => {
+                el.placeholder = el.getAttribute('data-placeholder-' + lang);
+            });
+
+            document.getElementById('langBtn').textContent = isAr ? 'English' : 'عربي';
+
+            // Re-render to update button labels
+            renderTable();
+        }
+
+        // ── DATA ──
+       
+let appointments = [];
+function loadAppointments() {
+    fetch('http://localhost:3000/appointments')
+        .then(res => res.json())
+        .then(data => {
+            appointments = data;
+            renderTable();
+        })
+        .catch(err => {
+            console.error("Error loading data:", err);
+        });
+}
+
+        // ── STATS ──
+        function updateStats() {
+            document.getElementById('statTotal').textContent = appointments.length;
+            const today = new Date().toISOString().split('T')[0];
+            const todayCount = appointments.filter(a => a.date === today).length;
+         
+        }
+
+        // ── RENDER TABLE ──
+        function renderTable(data) {
+            const list = data !== undefined ? data : appointments;
+            const tableBody = document.getElementById('tableBody');
+            const emptyMsg = document.getElementById('emptyMsg');
+
+            tableBody.innerHTML = '';
+
+            if (list.length === 0) {
+                emptyMsg.style.display = 'block';
+                updateStats();
+                return;
+            }
+
+            emptyMsg.style.display = 'none';
+
+            list.forEach((app, index) => {
+                const realIndex = data !== undefined ? appointments.indexOf(app) : index;
+                const row = document.createElement('tr');
+
+                const editLabel = currentLang === 'ar' ? 'تعديل' : 'Edit';
+                const deleteLabel = currentLang === 'ar' ? 'حذف' : 'Delete';
+
+                row.innerHTML = `
+                    <td><strong>${app.name}</strong></td>
+                    <td>${app.phone}</td>
+                    <td><span class="badge">${app.service}</span></td>
+                    <td>${app.date}</td>
+                    <td>${app.time || '–'}</td>
+                    <td><button class="btn btn-edit" onclick="editAppointment(${realIndex})"><i class="fas fa-pen"></i> ${editLabel}</button></td>
+                    <td><button class="btn btn-danger" onclick="deleteAppointment(${realIndex})"><i class="fas fa-trash"></i> ${deleteLabel}</button></td>
+                `;
+                tableBody.appendChild(row);
+            });
+
+            updateStats();
+        }
+
+        // ── SEARCH ──
+        function searchBooking() {
+            const input = document.getElementById('searchInput').value.trim().toLowerCase();
+
+            const emptyMsg = {
+                en: 'Please enter a name or phone number to search.',
+                ar: 'من فضلك ادخل الاسم أو رقم التليفون للبحث'
+            };
+            const notFoundMsg = {
+                en: 'No bookings found for this name or number.',
+                ar: 'لا يوجد حجوزات بهذا الاسم أو الرقم'
+            };
+
+            if (input === '') {
+                alert(emptyMsg[currentLang]);
+                return;
+            }
+
+            const filtered = appointments.filter(app =>
+                app.phone.includes(input) || app.name.toLowerCase().includes(input)
+            );
+
+            if (filtered.length === 0) {
+                document.getElementById('tableBody').innerHTML = '';
+                const emptyEl = document.getElementById('emptyMsg');
+                emptyEl.querySelector('p').textContent = notFoundMsg[currentLang];
+                emptyEl.style.display = 'block';
+            } else {
+                renderTable(filtered);
+            }
+        }
+
+    
+function deleteAppointment(index) {
+    const confirmMsg = currentLang === 'ar'
+        ? 'هل أنت متأكد من حذف الحجز؟'
+        : 'Are you sure you want to delete this booking?';
+
+    if (confirm(confirmMsg)) {
+        const id = appointments[index]?.id;
+
+        if (!id) {
+            alert("Invalid ID");
+            return;
+        }
+
+        fetch(`http://localhost:3000/appointments/${id}`, {
+            method: 'DELETE'
+        })
+        .then(() => loadAppointments())
+        .catch(err => console.error(err));
+    }
+}
+
+
+// ── EDIT ──
+        function editAppointment(index) {
+            const app = appointments[index];
+
+            const prompts = {
+                en: {
+                    name: 'Edit Name:',
+                    phone: 'Edit Mobile Number:',
+                    date: 'Edit Date (yyyy-mm-dd):',
+                    service: 'Select Service:\n',
+                    time: 'Select Time:\n'
+                },
+                ar: {
+                    name: 'عدل الاسم:',
+                    phone: 'عدل رقم الموبايل:',
+                    date: 'عدل التاريخ (yyyy-mm-dd):',
+                    service: 'اختر الخدمة:\n',
+                    time: 'اختر الوقت:\n'
+                }
+            };
+            const p = prompts[currentLang];
+
+            const newName = prompt(p.name, app.name) || app.name;
+            const newPhone = prompt(p.phone, app.phone) || app.phone;
+            const newDate = prompt(p.date, app.date) || app.date;
+
+            const services = [
+                { en: 'Dental Checkup', ar: 'الكشف والفحص' },
+                { en: 'Dental Cleaning', ar: 'تنظيف الأسنان' },
+                { en: 'Teeth Whitening', ar: 'تبييض الأسنان' },
+                { en: 'Tooth Filling', ar: 'حشو الأسنان' },
+                { en: 'Root Canal Treatment', ar: 'علاج العصب' },
+                { en: 'Dental Implants', ar: 'زراعة الأسنان' },
+                { en: 'Orthodontics', ar: 'تقويم الأسنان' },
+                { en: 'Hollywood Smile', ar: 'ابتسامة هوليود' },
+                { en: 'Pediatric Dentistry', ar: 'أسنان الأطفال' },
+                { en: 'Wisdom Tooth Removal', ar: 'خلع ضرس العقل' },
+                { en: 'Dental Crowns', ar: 'تيجان الأسنان' },
+                { en: 'Dental Veneers', ar: 'عدسات الأسنان' },
+                { en: 'Gum Treatment', ar: 'علاج اللثة' },
+                { en: 'Dentures', ar: 'أطقم الأسنان' },
+                { en: 'Tooth Extraction', ar: 'خلع الأسنان العادي' },
+                { en: 'X-Ray & Digital Imaging', ar: 'الأشعة والتصوير الرقمي' }
+            ];
+
+            let serviceOptions = p.service;
+            services.forEach((s, i) => {
+                serviceOptions += `${i + 1}. ${s.en} | ${s.ar}\n`;
+            });
+
+            let serviceIndex = parseInt(prompt(serviceOptions, services.findIndex(s => s.en === app.service) + 1));
+            if (isNaN(serviceIndex) || serviceIndex < 1 || serviceIndex > services.length) {
+                serviceIndex = services.findIndex(s => s.en === app.service) + 1;
+            }
+            const newService = services[serviceIndex - 1].en;
+
+            const times = [
+                '12:00 بعد الظهر', '12:30 بعد الظهر', '2:00 بعد الظهر',
+                '2:20 بعد الظهر', '2:50 بعد الظهر', '3:00 مساءً',
+                '3:30 مساءً', '4:20 مساءً', '5:00 مساءً',
+                '5:30 مساءً', '6:00 مساءً', '6:25 مساءً',
+                '7:00 مساءً', '7:30 مساءً', '8:00 مساءً',
+                '8:30 مساءً', '9:00 مساءً', '9:30 مساءً',
+                '10:00 مساءً', '10:30 مساءً', '11:00 مساءً',
+                '11:30 مساءً', '12:00 مساءً'
+            ];
+
+            let timeOptions = p.time;
+            times.forEach((t, i) => { timeOptions += `${i + 1}. ${t}\n`; });
+
+            let timeIndex = parseInt(prompt(timeOptions, times.indexOf(app.time) + 1));
+            if (isNaN(timeIndex) || timeIndex < 1 || timeIndex > times.length) {
+                timeIndex = times.indexOf(app.time) + 1;
+            }
+            const newTime = times[timeIndex - 1];
+
+      
+
+fetch(`http://localhost:3000/appointments/${appointments[index].id}`, {
+           //fetch(`http://localhost:3000/appointments/${index}`, {
+    method: 'PUT',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+        name: newName,
+        phone: newPhone,
+        service: newService,
+        date: newDate,
+        time: newTime
+    })
+})
+.then(() => loadAppointments());
+        }
+
+ 
+loadAppointments();
+    </script>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+

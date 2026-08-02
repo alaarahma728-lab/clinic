@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Prime Smile Dental Clinic</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        :root {
+            --navy: #1c3d5a;
+            --gold: #c9a24d;
+            --gold-dark: #b8933f;
+            --bg: #f4f6f9;
+            --white: #ffffff;
+            --text: #212529;
+            --muted: #6c757d;
+            --border: #e0e4ea;
+            --shadow: 0 4px 20px rgba(28, 61, 90, 0.10);
+            --shadow-hover: 0 8px 32px rgba(28, 61, 90, 0.16);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--text);
+    padding-bottom: 50px;
+    transition: direction 0.2s;
+
+    background: linear-gradient(
+        rgba(255,255,255,0.88),
+        rgba(255,255,255,0.92)
+    ),
+    url('https://images.unsplash.com/photo-1588776814546-1ffcf47267a5');
+    
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+        /* ── HEADER ── */
+        header {
+            background: var(--navy);
+            padding: 16px 0;
+            position: relative;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.18);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .logo {
+            color: var(--gold);
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        nav ul li a:hover {
+            color: var(--gold);
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* ── BUTTONS ── */
+        .btn {
+            background: var(--gold);
+            color: var(--navy);
+            padding: 10px 22px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            border: none;
+            transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            background: var(--gold-dark);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(201, 162, 77, 0.35);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--white);
+            border: 1.5px solid rgba(255, 255, 255, 0.4);
+            padding: 8px 18px;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-outline:hover {
+            border-color: var(--gold);
+            color: var(--gold);
+        }
+
+        /* ── HERO ── */
+        .hero {
+            background: linear-gradient(rgba(28, 61, 90, .88), rgba(28, 61, 90, .88)),
+                url('https://images.unsplash.com/photo-1588776814546-1ffcf47267a5') center/cover;
+            min-height: 88vh;
+            display: flex;
+            align-items: center;
+            color: var(--white);
+        }
+
+        .hero-content {
+            max-width: 560px;
+        }
+
+        .hero-content h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+
+        .hero-content p {
+            font-size: 16px;
+            line-height: 1.7;
+            margin-bottom: 28px;
+            opacity: 0.88;
+        }
+
+        /* ── SECTIONS ── */
+        section {
+            padding: 70px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--navy);
+            font-size: 30px;
+        }
+
+        .section-title p {
+            color: var(--muted);
+            margin-top: 8px;
+            font-size: 15px;
+        }
+
+        .card {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+        }
+
+        /* ── ABOUT ── */
+        .about-content {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .about-content img {
+            width: 260px;
+            border-radius: 12px;
+            object-fit: cover;
+        }
+
+        .about-content p {
+            font-size: 15px;
+            line-height: 1.8;
+            color: var(--text);
+        }
+
+        /* ── SERVICES GRID ── */
+        .services-wrapper {
+            position: relative;
+        }
+
+        .services-grid {
+            display: flex;
+            overflow-x: auto;
+            gap: 18px;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            padding: 8px 4px 16px;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .services-grid::-webkit-scrollbar {
+            height: 5px;
+        }
+
+        .services-grid::-webkit-scrollbar-track {
+            background: var(--border);
+            border-radius: 10px;
+        }
+
+        .services-grid::-webkit-scrollbar-thumb {
+            background: var(--gold);
+            border-radius: 10px;
+        }
+
+        .service-box {
+            flex: 0 0 calc(33.333% - 12px);
+            min-width: 240px;
+            scroll-snap-align: start;
+            background: var(--bg);
+            padding: 28px 22px;
+            text-align: center;
+            border-radius: 14px;
+            border: 1px solid var(--border);
+            transition: box-shadow 0.25s, transform 0.25s, border-color 0.25s;
+        }
+
+        .service-box:hover {
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-4px);
+            border-color: var(--gold);
+        }
+
+        .service-box i {
+            font-size: 30px;
+            color: var(--gold);
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .service-box h4 {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 8px;
+        }
+
+        .service-box p {
+            font-size: 13px;
+            color: var(--muted);
+            line-height: 1.7;
+        }
+
+        /* Scroll buttons */
+        .scroll-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--navy);
+            color: var(--white);
+            border: none;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 14px;
+            z-index: 10;
+            opacity: 0.85;
+            transition: opacity 0.2s;
+        }
+
+        .scroll-btn:hover {
+            opacity: 1;
+        }
+
+        .scroll-btn.left {
+            left: -14px;
+        }
+
+        .scroll-btn.right {
+            right: -14px;
+        }
+
+        /* ── SPLIT LAYOUT: APPOINTMENT + CONTACT ── */
+        .split-section {
+            display: flex;
+            gap: 24px;
+            align-items: stretch;
+        }
+
+        .split-section .split-left,
+        .split-section .split-right {
+            flex: 1;
+        }
+
+        /* ── FORM ── */
+        form {
+            display: grid;
+            gap: 14px;
+        }
+
+        input,
+        select {
+            padding: 12px 16px;
+            border-radius: 8px;
+            border: 1.5px solid var(--border);
+            font-family: 'DM Sans', sans-serif;
+            font-size: 14px;
+            color: var(--text);
+            background: var(--bg);
+            transition: border-color 0.2s, box-shadow 0.2s;
+            width: 100%;
+        }
+
+        input:focus,
+        select:focus {
+            outline: none;
+            border-color: var(--gold);
+            box-shadow: 0 0 0 3px rgba(201, 162, 77, 0.15);
+        }
+
+        select option {
+            color: var(--text);
+        }
+
+        .form-submit-btn {
+            width: 100%;
+            padding: 14px;
+            font-size: 15px;
+            border-radius: 10px;
+        }
+
+        /* ── CONTACT SECTION ── */
+        .contact-info {
+            margin-top: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 14px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .contact-item:last-child {
+            border-bottom: none;
+        }
+
+        .contact-item i {
+            font-size: 20px;
+            color: var(--gold);
+            width: 24px;
+            text-align: center;
+        }
+
+        .contact-item span {
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .map-iframe {
+            width: 100%;
+            height: 280px;
+            border: 0;
+            border-radius: 12px;
+            margin-top: 20px;
+        }
+
+        /* ── MODAL ── */
+        .modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.6);
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+        }
+
+        .modal-content {
+            background: var(--white);
+            padding: 44px 36px;
+            border-radius: 20px;
+            text-align: center;
+            width: 90%;
+            max-width: 400px;
+            animation: scaleIn 0.35s ease;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+        }
+
+        .modal-content i {
+            font-size: 56px;
+            color: var(--gold);
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        .modal-content h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--navy);
+            font-size: 22px;
+            margin-bottom: 8px;
+        }
+
+        .modal-content p {
+            color: var(--muted);
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .modal-actions {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .modal-actions .btn {
+            flex: 1;
+            min-width: 120px;
+        }
+
+        @keyframes scaleIn {
+            from {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        /* ── FOOTER ── */
+        footer {
+            background: var(--navy);
+            color: rgba(255, 255, 255, 0.75);
+            text-align: center;
+            padding: 24px;
+            font-size: 14px;
+        }
+
+        footer span {
+            color: var(--gold);
+            font-weight: 600;
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 900px) {
+            .split-section {
+                flex-direction: column;
+            }
+
+            .service-box {
+                flex: 0 0 calc(50% - 9px);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .hero-content h1 {
+                font-size: 32px;
+            }
+
+            .about-content {
+                flex-direction: column;
+            }
+
+            .about-content img {
+                width: 100%;
+            }
+
+            .service-box {
+                flex: 0 0 85%;
+            }
+
+            .card {
+                padding: 24px 18px;
+            }
+
+            nav ul {
+                display: none;
+            }
+        }
+
+        /* ── RTL adjustments ── */
+        [dir="rtl"] .hero {
+            justify-content: flex-end;
+        }
+
+        [dir="ltr"] .hero {
+            justify-content: flex-start;
+        }
+
+        [dir="rtl"] .scroll-btn.left {
+            left: auto;
+            right: -14px;
+        }
+
+        [dir="rtl"] .scroll-btn.right {
+            right: auto;
+            left: -14px;
+        }
+
+.card, .split-left, .split-right, .table-wrapper, .search-bar {
+    background: #ffffff;
+    border-radius: 14px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+}
+    
+
+
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.about-card {
+    background: var(--white);
+    padding: 30px 20px;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.about-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.about-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 12px;
+}
+
+.about-card i {
+    font-size: 32px;
+    color: var(--gold);
+    margin-bottom: 12px;
+}
+
+.about-card h3 {
+    color: var(--navy);
+    margin-bottom: 8px;
+    font-size: 16px;
+}
+
+.about-card p {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.6;
+}
+
+
+
+
+
+@media (max-width: 768px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+.service-box img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 12px;
+    border: 2px solid var(--gold);
+    padding: 3px;
+    background: #fff;
+}
+
+    </style>
+</head>
+
+<body dir="ltr">
+
+    <!-- ── HEADER ── -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo"><i class="fas fa-tooth"></i> Prime Smile</div>
+
+                <ul>
+                    <li><a href="#home" data-en="Home" data-ar="الرئيسية">Home</a></li>
+                    <li><a href="#about" data-en="About" data-ar="عن العيادة">About</a></li>
+                    <li><a href="#services" data-en="Services" data-ar="الخدمات">Services</a></li>
+                    <li><a href="#appointment" data-en="Appointment" data-ar="الحجز">Appointment</a></li>
+                    <li><a href="#contact" data-en="Contact" data-ar="تواصل معنا">Contact</a></li>
+                </ul>
+
+                <div class="nav-actions">
+                    <a href="dashboard.html" target="_blank" class="btn" data-en="View Bookings" data-ar="الحجوزات">View
+                        Bookings</a>
+                    <button class="btn-outline" onclick="toggleLang()" id="langBtn">عربي</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ── HERO ── -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 data-en="Prime Smile Dental Clinic" data-ar="عيادة برايم سمايل لطب الأسنان">Prime Smile Dental
+                    Clinic</h1>
+                <p data-en="Premium dental care for a confident, healthy smile. We combine expertise with comfort."
+                    data-ar="رعاية أسنان متكاملة لابتسامة صحية مشرقة. نجمع بين الخبرة والراحة في بيئة عيادة عصرية.">
+                    Premium dental care for a confident, healthy smile. We combine expertise with comfort.</p>
+                <a href="#appointment" class="btn" data-en="Book Appointment" data-ar="احجز موعدك الآن">Book
+                    Appointment</a>
+            </div>
+        </div>
+    </section>
+
+
+     <!-- about-->
+
+<section id="about">
+    <div class="container">
+        <div class="section-title">
+            <h2 data-en="About The Doctor" data-ar="عن الطبيب">About The Doctor</h2>
+        </div>
+
+        <div class="about-grid">
+
+            <!-- CARD 1 -->
+            <div class="about-card">
+                <img src="doctor t.jpg" alt="Doctor">
+                <h3>Dr. Mostafa</h3>
+                <p>
+                    Professional dental specialist with 10+ years of experience in all dental fields.
+                </p>
+            </div>
+
+            <!-- CARD 2 -->
+            <div class="about-card">
+                 <img src="download 1.jpg" alt="Doctor">
+                <h3>Experience</h3>
+                <p>
+                    Over 10 years of expertise delivering high-quality dental care.
+                </p>
+            </div>
+
+            <!-- CARD 3 -->
+            <div class="about-card">
+                 <img src="222.jpg" alt="Doctor">
+                <h3>Our Mission</h3>
+                <p>
+                    Providing comfortable, modern, and patient-centered dental services.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+  
+
+    <!-- ── SERVICES ── -->
+    <section id="services">
+        <div class="container card">
+            <div class="section-title">
+                <h2 data-en="Our Services" data-ar="خدماتنا">Our Services</h2>
+                <p data-en="Comprehensive dental care under one roof" data-ar="رعاية أسنان شاملة تحت سقف واحد">
+                    Comprehensive dental care under one roof</p>
+            </div>
+
+            <div class="services-wrapper">
+                <button class="scroll-btn left" onclick="scrollServices(-1)" aria-label="Scroll left">&#8249;</button>
+                <div class="services-grid" id="servicesGrid">
+
+                    <div class="service-box">
+                          <img src="images 3.jpg" alt="Doctor">
+                        <h4 data-en="Dental Checkup" data-ar="الكشف والفحص">Dental Checkup</h4>
+                        <p data-en="Comprehensive exam for early detection and maintaining oral health."
+                            data-ar="فحص شامل للأسنان واللثة للكشف المبكر عن أي مشاكل والحفاظ على صحة الفم.">
+                            Comprehensive exam for early detection and maintaining oral health.</p>
+                    </div>
+
+                    <div class="service-box">
+                          <img src="download 2.jpg" alt="Doctor">
+                        <h4 data-en="Dental Cleaning" data-ar="تنظيف الأسنان">Dental Cleaning</h4>
+                        <p data-en="Professional cleaning to remove plaque and tartar for a healthy fresh smile."
+                            data-ar="تنظيف احترافي لإزالة الجير والبلاك المتراكم ومنحك ابتسامة صحية ونفساً منعشاً.">
+                            Professional cleaning to remove plaque and tartar for a healthy fresh smile.</p>
+                    </div>
+
+                    <div class="service-box">
+                        <img src="images 45.jpg" alt="Doctor">
+                        <h4 data-en="Teeth Whitening" data-ar="تبييض الأسنان">Teeth Whitening</h4>
+                        <p data-en="Safe and effective whitening to brighten your smile and remove stains."
+                            data-ar="تبييض آمن وفعّال لإزالة التصبغات والحصول على ابتسامة أكثر إشراقاً وثقة.">Safe and
+                            effective whitening to brighten your smile and remove stains.</p>
+                    </div>
+
+                    <div class="service-box">
+                         <img src="download 1.jpg" alt="Doctor">
+                        <h4 data-en="Tooth Filling" data-ar="حشو الأسنان">Tooth Filling</h4>
+                        <p data-en="Cosmetic fillings that preserve the natural shape and function of your tooth."
+                            data-ar="حشوات تجميلية لعلاج التسوس مع الحفاظ على شكل السن الطبيعي ووظيفته.">Cosmetic
+                            fillings that preserve the natural shape and function of your tooth.</p>
+                    </div>
+
+                    <div class="service-box">
+                         <img src="images 3.jpg" alt="Doctor">
+                        <h4 data-en="Root Canal Treatment" data-ar="علاج العصب">Root Canal Treatment</h4>
+                        <p data-en="Painless nerve treatment using the latest techniques to save your tooth."
+                            data-ar="علاج التهابات العصب نهائياً بدون ألم باستخدام أحدث التقنيات.">Painless nerve
+                            treatment using the latest techniques to save your tooth.</p>
+                    </div>
+
+                    <div class="service-box">
+                       <img src="download 2.jpg" alt="Doctor">
+                        <h4 data-en="Dental Implants" data-ar="زراعة الأسنان">Dental Implants</h4>
+                        <p data-en="Advanced implants to replace missing teeth and restore natural function."
+                            data-ar="زراعة أسنان متطورة لتعويض الأسنان المفقودة واستعادة الوظيفة والمظهر.">Advanced
+                            implants to replace missing teeth and restore natural function.</p>
+                    </div>
+
+                    <div class="service-box">
+                      <img src="222.jpg" alt="Doctor">
+                        <h4 data-en="Orthodontics" data-ar="تقويم الأسنان">Orthodontics</h4>
+                        <p data-en="Correct misaligned teeth and improve bite using modern techniques for all ages."
+                            data-ar="تقويم الأسنان لتصحيح الاعوجاج وتحسين الإطباق والمظهر العام باستخدام تقنيات حديثة.">
+                            Correct misaligned teeth and improve bite using modern techniques for all ages.</p>
+                    </div>
+
+                    <div class="service-box">
+                      <img src="images 45.jpg" alt="Doctor">
+                        <h4 data-en="Hollywood Smile" data-ar="ابتسامة هوليود">Hollywood Smile</h4>
+                        <p data-en="Design your perfect smile using veneers and cosmetic lenses."
+                            data-ar="تصميم ابتسامة مثالية باستخدام الفينير أو العدسات التجميلية بأحدث الأساليب.">Design
+                            your perfect smile using veneers and cosmetic lenses.</p>
+                    </div>
+
+                    <div class="service-box">
+                        <img src="download 1.jpg" alt="Doctor">
+                        <h4 data-en="Pediatric Dentistry" data-ar="أسنان الأطفال">Pediatric Dentistry</h4>
+                        <p data-en="Comprehensive and gentle dental care for children in a comfortable setting."
+                            data-ar="رعاية متكاملة لأسنان الأطفال بأسلوب آمن ومريح يناسب جميع الأعمار.">Comprehensive
+                            and gentle dental care for children in a comfortable setting.</p>
+                    </div>
+
+                    <div class="service-box">
+                          <img src="images 3.jpg" alt="Doctor">
+                        <h4 data-en="Wisdom Tooth Removal" data-ar="خلع ضرس العقل">Wisdom Tooth Removal</h4>
+                        <p data-en="Surgical or simple extraction with minimal pain using the latest tools."
+                            data-ar="خلع ضرس العقل جراحياً أو عادياً بأقل ألم وبأحدث الأدوات المتاحة.">Surgical or
+                            simple extraction with minimal pain using the latest tools.</p>
+                    </div>
+
+                    <div class="service-box">
+                         <img src="download 2.jpg" alt="Doctor">
+                        <h4 data-en="Dental Crowns" data-ar="تيجان الأسنان">Dental Crowns</h4>
+                        <p data-en="High-quality crowns to restore damaged teeth aesthetically and functionally."
+                            data-ar="تيجان عالية الجودة لترميم الأسنان التالفة بشكل تجميلي ووظيفي متكامل.">High-quality
+                            crowns to restore damaged teeth aesthetically and functionally.</p>
+                    </div>
+
+                    <div class="service-box">
+                         <img src="images 45.jpg" alt="Doctor">
+                        <h4 data-en="Dental Veneers" data-ar="عدسات الأسنان">Dental Veneers</h4>
+                        <p data-en="Ultra-thin porcelain veneers for a flawless, natural-looking smile."
+                            data-ar="طبقات خزفية رفيعة جداً لابتسامة طبيعية المظهر وخالية من العيوب.">Ultra-thin
+                            porcelain veneers for a flawless, natural-looking smile.</p>
+                    </div>
+
+                    <div class="service-box">
+                         <img src="download 1.jpg" alt="Doctor">
+                        <h4 data-en="Gum Treatment" data-ar="علاج اللثة">Gum Treatment</h4>
+                        <p data-en="Comprehensive treatment of gum disease to protect your teeth and oral health."
+                            data-ar="علاج شامل لأمراض اللثة للحفاظ على أسنانك وصحة فمك على المدى البعيد.">Comprehensive
+                            treatment of gum disease to protect your teeth and oral health.</p>
+                    </div>
+
+                    <div class="service-box">
+                       
+                      <img src="222.jpg" alt="Doctor">
+                        <h4 data-en="Dentures" data-ar="أطقم الأسنان">Dentures</h4>
+                        <p data-en="Custom-made full or partial dentures for comfort and a natural appearance."
+                            data-ar="أطقم أسنان كاملة أو جزئية مصممة بدقة للراحة والمظهر الطبيعي.">Custom-made full or
+                            partial dentures for comfort and a natural appearance.</p>
+                    </div>
+
+                    <div class="service-box">
+                        
+                      <img src="download 2.jpg" alt="Doctor">
+                        <h4 data-en="Tooth Extraction" data-ar="خلع الأسنان">Tooth Extraction</h4>
+                        <p data-en="Simple extraction using modern techniques with minimal discomfort."
+                            data-ar="خلع الأسنان العادي بأحدث الطرق وبأقل ألم ممكن للحفاظ على راحتك.">Simple extraction
+                            using modern techniques with minimal discomfort.</p>
+                    </div>
+
+                    <div class="service-box">
+                      <img src="images 3.jpg" alt="Doctor">
+                        <h4 data-en="X-Ray & Digital Imaging" data-ar="الأشعة والتصوير الرقمي">X-Ray & Digital Imaging
+                        </h4>
+                        <p data-en="Digital imaging for fast and accurate diagnosis of dental and gum issues."
+                            data-ar="تصوير الأشعة الرقمية لتشخيص دقيق وسريع لمشاكل الأسنان واللثة بأحدث الأجهزة.">
+                            Digital imaging for fast and accurate diagnosis of dental and gum issues.</p>
+                    </div>
+
+                </div>
+                <button class="scroll-btn right" onclick="scrollServices(1)" aria-label="Scroll right">&#8250;</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── APPOINTMENT + CONTACT (SPLIT) ── -->
+    <section id="appointment">
+        <div class="container">
+            <div class="split-section">
+
+                <!-- LEFT: Booking Form -->
+                <div class="split-left card">
+                    <div class="section-title">
+                        <h2 data-en="Book Appointment" data-ar="احجز موعد">Book Appointment</h2>
+                        <p data-en="Fill in your details and we'll confirm shortly"
+                            data-ar="أدخل بياناتك وسنتواصل معك في أقرب وقت">Fill in your details and we'll confirm
+                            shortly</p>
+                    </div>
+
+                    <form id="appointmentForm" onsubmit="return validateForm()">
+                        <input type="text" id="name" placeholder="Full Name" data-placeholder-en="Full Name"
+                            data-placeholder-ar="الاسم بالكامل">
+
+                        <input type="tel" id="phone" placeholder="Mobile Number" data-placeholder-en="Mobile Number"
+                            data-placeholder-ar="رقم الموبايل">
+
+                        <input type="date" id="date">
+
+                        <select id="service">
+                            <option value="" data-en="Select Service" data-ar="اختر الخدمة">Select Service</option>
+                            <option value="Dental Checkup">Dental Checkup | الكشف والفحص</option>
+                            <option value="Dental Cleaning">Dental Cleaning | تنظيف الأسنان</option>
+                            <option value="Teeth Whitening">Teeth Whitening | تبييض الأسنان</option>
+                            <option value="Tooth Filling">Tooth Filling | حشو الأسنان</option>
+                            <option value="Root Canal Treatment">Root Canal Treatment | علاج العصب</option>
+                            <option value="Dental Implants">Dental Implants | زراعة الأسنان</option>
+                            <option value="Orthodontics">Orthodontics | تقويم الأسنان</option>
+                            <option value="Hollywood Smile">Hollywood Smile | ابتسامة هوليود</option>
+                            <option value="Pediatric Dentistry">Pediatric Dentistry | أسنان الأطفال</option>
+                            <option value="Wisdom Tooth Removal">Wisdom Tooth Removal | خلع ضرس العقل</option>
+                            <option value="Dental Crowns">Dental Crowns | تيجان الأسنان</option>
+                            <option value="Dental Veneers">Dental Veneers | عدسات الأسنان</option>
+                            <option value="Gum Treatment">Gum Treatment | علاج اللثة</option>
+                            <option value="Dentures">Dentures | أطقم الأسنان</option>
+                            <option value="Tooth Extraction">Tooth Extraction | خلع الأسنان العادي</option>
+                            <option value="X-Ray & Digital Imaging">X-Ray & Digital Imaging | الأشعة والتصوير الرقمي
+                            </option>
+                        </select>
+
+                        <select id="time">
+                            <option value="" data-en="Select Time" data-ar="اختر الوقت">Select Time</option>
+                            <option>12:00 بعد الظهر</option>
+                            <option>12:30 بعد الظهر</option>
+                            <option>2:00 بعد الظهر</option>
+                            <option>2:20 بعد الظهر</option>
+                            <option>2:50 بعد الظهر</option>
+                            <option>3:00 مساءً</option>
+                            <option>3:30 مساءً</option>
+                            <option>4:20 مساءً</option>
+                            <option>5:00 مساءً</option>
+                            <option>5:30 مساءً</option>
+                            <option>6:00 مساءً</option>
+                            <option>6:25 مساءً</option>
+                            <option>7:00 مساءً</option>
+                            <option>7:30 مساءً</option>
+                            <option>8:00 مساءً</option>
+                            <option>8:30 مساءً</option>
+                            <option>9:00 مساءً</option>
+                            <option>9:30 مساءً</option>
+                            <option>10:00 مساءً</option>
+                            <option>10:30 مساءً</option>
+                            <option>11:00 مساءً</option>
+                            <option>11:30 مساءً</option>
+                            <option>12:00 مساءً</option>
+                        </select>
+
+                        <button class="btn form-submit-btn" type="submit" data-en="Book Now" data-ar="احجز الآن">Book
+                            Now</button>
+                    </form>
+                </div>
+
+                <!-- RIGHT: Contact Us -->
+                <div class="split-right card" id="contact">
+                    <div class="section-title">
+                        <h2 data-en="Contact Us" data-ar="تواصل معنا">Contact Us</h2>
+                        <p data-en="We're here to help you" data-ar="نحن هنا لمساعدتك">We're here to help you</p>
+                    </div>
+
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>01017608864</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span data-en="Cairo, Egypt" data-ar="القاهرة، مصر">Cairo, Egypt</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <span data-en="Daily: 12:00 PM – 12:00 AM"
+                                data-ar="يومياً: 12:00 ظهراً – 12:00 منتصف الليل">Daily: 12:00 PM – 12:00 AM</span>
+                        </div>
+                    </div>
+
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d263.9732671279486!2d31.792664453860326!3d30.724683276664205!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14f825a0793657df%3A0xaca7ba79fbdf1a4e!2zTXIuVG9vdGggRGVudGFsIENsaW5pYyDYry_Zhdi12LfZgdmKINi52LfZitipINin2KjYsdin2YYZitmF!5e0!3m2!1sen!2seg!4v1769860700403!5m2!1sen!2seg"
+                        class="map-iframe" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                        title="Prime Smile Location">
+                    </iframe>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ── SUCCESS MODAL ── -->
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <i class="fas fa-check-circle"></i>
+            <h3 data-en="Booking Confirmed!" data-ar="تم الحجز بنجاح!">Booking Confirmed!</h3>
+            <p data-en="We will contact you as soon as possible." data-ar="سيتم التواصل معك في أقرب وقت.">We will
+                contact you as soon as possible.</p>
+            <div class="modal-actions">
+                <button onclick="openDashboard()" class="btn" data-en="View Bookings" data-ar="عرض الحجوزات">View
+                    Bookings</button>
+                <button onclick="closeModal()" class="btn" style="background:var(--navy);color:#fff;" data-en="Close"
+                    data-ar="إغلاق">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ── FOOTER ── -->
+    <footer>
+        <p>© 2026 <span>Prime Smile Dental Clinic</span></p>
+    </footer>
+
+    <script>
+        // ── LANGUAGE SYSTEM ──
+        let currentLang = 'en';
+
+        function toggleLang() {
+            currentLang = currentLang === 'en' ? 'ar' : 'en';
+            applyLang(currentLang);
+        }
+
+        function applyLang(lang) {
+            const isAr = lang === 'ar';
+            document.documentElement.setAttribute('lang', lang);
+            document.body.setAttribute('dir', isAr ? 'rtl' : 'ltr');
+
+            // Text elements
+            document.querySelectorAll('[data-en]').forEach(el => {
+                el.textContent = el.getAttribute('data-' + lang);
+            });
+
+            // Placeholders
+            document.querySelectorAll('[data-placeholder-en]').forEach(el => {
+                el.placeholder = el.getAttribute('data-placeholder-' + lang);
+            });
+
+            // Lang button label
+            document.getElementById('langBtn').textContent = isAr ? 'English' : 'عربي';
+        }
+
+        // ── SERVICES SCROLL ──
+        function scrollServices(dir) {
+            const grid = document.getElementById('servicesGrid');
+            const cardWidth = grid.querySelector('.service-box').offsetWidth + 18;
+            grid.scrollBy({ left: dir * cardWidth * 3, behavior: 'smooth' });
+        }
+
+        // ── FORM VALIDATION ──
+        function validateForm() {
+            const name = document.getElementById('name').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const date = document.getElementById('date').value;
+            const service = document.getElementById('service').value;
+            const time = document.getElementById('time').value.trim();
+
+            const msgs = {
+                en: { empty: '⚠️ Please fill in all fields.', phone: '📵 Invalid mobile number.' },
+                ar: { empty: '⚠️ من فضلك املأ كل البيانات', phone: '📵 رقم الموبايل غير صحيح' }
+            };
+
+            if (!name || !phone || !date || !service || !time) {
+                alert(msgs[currentLang].empty);
+                return false;
+            }
+
+            const egyptPhoneRegex = /^(010|011|012|015)[0-9]{8}$/;
+            if (!egyptPhoneRegex.test(phone)) {
+                alert(msgs[currentLang].phone);
+                return false;
+            }
+
+            let appointments = JSON.parse(localStorage.getItem('appointments')) || [];
+            appointments.push({ name, phone, service, date, time });
+         //   localStorage.setItem('appointments', JSON.stringify(appointments));
+fetch('http://localhost:3000/appointments', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+
+    body: JSON.stringify({
+    id: Date.now().toString(), 
+    name,
+    phone,
+    service,
+    date,
+    time
+})
+   
+})
+.then(res => res.json())
+.then(() => {
+  
+});
+            document.getElementById('successModal').style.display = 'flex';
+            document.getElementById('appointmentForm').reset();
+            return false;
+        }
+
+        function openDashboard() { window.open('dashboard.html', '_blank'); }
+        function closeModal() { document.getElementById('successModal').style.display = 'none'; }
+    </script>
+
+</body>
+
+</html>
