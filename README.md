@@ -34,19 +34,19 @@ This project was built to simulate a real dental clinic website with an attracti
 ## 📸 Project Preview
 
 ### Home Page
-![Home](images/home.png)
+
 
 ### Services
-![Services](images/services.png)
+
 
 ### Doctors
-![Doctors](images/doctors.png)
+
 
 ### Appointment
-![Appointment](images/appointment.png)
+
 
 ### Contact
-![Contact](images/contact.png)
+
 
 ---
 
